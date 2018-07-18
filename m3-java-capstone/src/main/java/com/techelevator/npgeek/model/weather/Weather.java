@@ -3,7 +3,6 @@ package com.techelevator.npgeek.model.weather;
 public class Weather {
 	
 	private String parkCode;
-	private int fivedayForecast;
 	private int low;
 	private int high;
 	private String forecast;
@@ -16,12 +15,7 @@ public class Weather {
 		this.parkCode = parkCode;
 	}
 	
-	public int getFivedayForecast() {
-		return fivedayForecast;
-	}
-	public void setFivedayForecast(int fivedayForecast) {
-		this.fivedayForecast = fivedayForecast;
-	}
+	
 	public int getLow() {
 		return low;
 	}
@@ -35,6 +29,9 @@ public class Weather {
 		this.high = high;
 	}
 	public String getForecast() {
+		if (forecast.equals("partly cloudy")) {
+			return "partlyCloudy";
+		}
 		return forecast;
 	}
 	public void setForecast(String forecast) {

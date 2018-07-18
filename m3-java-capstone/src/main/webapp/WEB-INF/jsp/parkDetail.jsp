@@ -60,6 +60,22 @@
     			
 	    	 </div> 
 	    	 <hr>
+	    	 <c:forEach var="weather" items="${FiveDayWeather}"></c:forEach>
+	    	 <table class="weatherTable">
+					<tr>
+					<th><img src="img/${weather.forecast}.png"/></th>
+					</tr>
+					<tr>
+						<td>
+						<h3>High</h3> 
+					   ${weather.high}
+					   </td>
+					   <td> 
+					   <h3>Low</h3>
+					   ${weather.low}
+					   </td>
+					</tr>
+			    </table>
 
        
 
