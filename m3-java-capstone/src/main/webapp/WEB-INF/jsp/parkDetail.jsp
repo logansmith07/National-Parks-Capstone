@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="common/header.jsp">
-	<c:set var="title" value="${park.parkName}" />
+	
 </c:import>
     <section id="main-content">
 	    	<div class = "park">
@@ -60,23 +60,39 @@
     			
 	    	 </div> 
 	    	 <hr>
-	    	 <c:forEach var="weather" items="${FiveDayWeather}"></c:forEach>
+	    	 <c:url var="formAction" value="/parkDetail"/>
+	    	 <form action="${formAction}" method="POST" >
+	    	 <button name="celsius" type="submit" value="true">Celsius</button>
+			 <button name="celsius" type="submit" value="false">Fahrenheit</button>
+	    	 <input type="hidden" name="parkCode" id="parkCode" value="${park.parkCode}" />
+	    	 </form>
+	    	 <div>
+	    	 <img id="main-weather-img" src="img/weather/${weathers.get(0).forecast}.png"/>
+			 <p>High <c:out value= "${weathers.get(0).getHigh(celsius)}"/></p> 
+			 <p>Low <c:out value= "${weathers.get(0).getLow(celsius)}"/></p>
+			 <h3>Alerts:</h3>
+			 <ul>
+			 <c:forEach var="warning"  items="${weathers.get(0).getWarnings()}">
+			 <li><p>${warning}</p></li>
+			 </c:forEach>
+			 </ul>
+			 
+	    	 </div>
+	    	 <c:forEach var="index" begin="1"  end="${weathers.size() -1}">
 	    	 <table class="weatherTable">
 					<tr>
-					<th><img src="img/${weather.forecast}.png"/></th>
+					<th><img src="img/weather/${weathers.get(index).forecast}.png"/></th>
 					</tr>
 					<tr>
 						<td>
-						<h3>High</h3> 
-					   ${weather.high}
+						<p>High <c:out value= "${weathers.get(index).getHigh(celsius)}"/> </p> 
+				
+					   <p>Low <c:out value= "${weathers.get(index).getLow(celsius)}"/></p>
 					   </td>
-					   <td> 
-					   <h3>Low</h3>
-					   ${weather.low}
-					   </td>
+					   
 					</tr>
 			    </table>
-
+			</c:forEach>
        
 
     </section>

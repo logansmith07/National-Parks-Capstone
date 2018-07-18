@@ -1,5 +1,8 @@
 package com.techelevator.npgeek.model.weather;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,23 +21,28 @@ private JdbcTemplate jdbcTemplate;
 	}
 
 	@Override
-	public Weather getWeatherByParkCode(String parkCode) {
+	public List<Weather> getWeatherByParkCode(String parkCode) {
 		Weather weather = null;
+		List<Weather> weathers = new ArrayList<Weather>();
+//		System.out.println(parkCode);
 		String sqlSelectWeatherByParkCode = "SELECT * FROM weather WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectWeatherByParkCode, parkCode);
-		if(results.next()) {
+		while (results.next()) {
 			weather = mapRowToWeather(results);
+			System.out.println(weather.getHigh("true"));
+			weathers.add(weather);
 		}
-		return weather;
+		
+		return weathers;
 	}
 	
 	private Weather mapRowToWeather(SqlRowSet row) {
 		Weather weather = new Weather();
 		weather.setParkCode(row.getString("parkcode"));
-		weather.setFivedayForecast(row.getInt("fivedayforecastvalue"));
 		weather.setLow(row.getInt("low"));
 		weather.setHigh(row.getInt("high"));
 		weather.setForecast(row.getString("forecast"));
+		weather.setFiveDayForecast(row.getInt("fivedayforecastvalue"));
 		
 		return weather;		
 	}

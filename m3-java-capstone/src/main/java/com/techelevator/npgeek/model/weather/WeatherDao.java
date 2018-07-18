@@ -1,7 +1,9 @@
 package com.techelevator.npgeek.model.weather;
 
+import java.util.List;
+
 public interface WeatherDao {
 	
-	public Weather getWeatherByParkCode(String parkCode);
+	public List<Weather> getWeatherByParkCode(String parkCode);
 
 }

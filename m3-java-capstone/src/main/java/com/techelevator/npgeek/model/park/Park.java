@@ -18,6 +18,7 @@ public class Park {
 	private int entryFee;
 	private int numberAnimalSpecies;
 	
+	
 	public String getParkCode() {
 		return parkCode.toLowerCase();
 	}

@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>${title} - National Park Geek</title>
+    <title>National Park Geek</title>
     <c:url value="/css/styles.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
@@ -20,7 +20,7 @@
     		<c:url value="/img/ssg_logo.png" var="logoSrc" />
     		
         <a href="${homepage}">
-        		<img src="img/logo.png" />
+        		<img id="hero-pic" src="img/logo.png" />
         </a>
         <ul>
             <li><a href="${homepage}">Home</a></li>
