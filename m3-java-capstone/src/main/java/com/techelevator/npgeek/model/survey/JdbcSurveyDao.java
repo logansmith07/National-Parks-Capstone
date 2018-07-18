@@ -27,6 +27,7 @@ public class JdbcSurveyDao implements SurveyDao {
 	@Override
 	public Survey getNumberOfSurveysByParkCode() {
 		Survey survey = null;
+		//CHANGE LINE 31 SQL STATEMENT!!!
 		String sqlSelectSurveyByParkCode = "SELECT * FROM survey_results WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyByParkCode);
 		if(results.next()) {
