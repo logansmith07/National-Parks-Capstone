@@ -1,8 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:import url="common/header.jsp">
-	
-</c:import>
+<c:import url="common/header.jsp"/>
     <section id="main-content">
 	    	<div class = "park">
 		    		<img id="parkImg" src = "img/parks/${park.parkCode}.jpg"/>
