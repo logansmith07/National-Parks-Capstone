@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Solar System Geek</title>
+    <title>NavBar</title>
     <c:url value="/css/solarsystemgeek.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
@@ -16,13 +16,12 @@
 
     <header>
     <nav>
-    		<c:url value="/" var="homePageHref" />
+    		<c:url value="/homepage" var="homepage" />
     		<c:url value="/img/ssg_logo.png" var="logoSrc" />
     		
-        <a href="${homePageHref}">
+        <a href="${homepage}">
         		<img src="img/logo.png" />
         </a>
-        <h1>National Park Geek</h1>
         <ul>
             <li><a href="${homepage}">Home</a></li>
             <li><a href="${survey}">Survey</a></li>
@@ -31,5 +30,5 @@
     </header>
     
 
-</body>
+
 </html>

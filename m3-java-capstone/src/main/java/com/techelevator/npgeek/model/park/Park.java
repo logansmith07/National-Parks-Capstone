@@ -1,4 +1,4 @@
-package park;
+package com.techelevator.npgeek.model.park;
 
 public class Park {
 	
@@ -19,7 +19,7 @@ public class Park {
 	private int numberAnimalSpecies;
 	
 	public String getParkCode() {
-		return parkCode;
+		return parkCode.toLowerCase();
 	}
 	public void setParkCode(String parkCode) {
 		this.parkCode = parkCode;

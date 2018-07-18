@@ -8,16 +8,16 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+
 <c:import url="common/header.jsp"/>
     <section id="main-content">
     	<c:forEach var="park" items="${parks}">
 	    	<div class = "park">
-	    		<a href="parkDetail?parkId=${park.id}">
-		    		<img id="parkImg" src = "img/${park.id}"/>
+	    		<a href="parkDetail?parkCode=${park.parkCode}">
+		    		<img id="parkImg" src = "img/parks/${park.parkCode}.jpg"/>
 		    	</a>
     		
-    			<h2 class = "inline"> 
+    			<h2> 
     			<c:out value="${park.parkName}" />
     			<c:out value="${park.state}" />
     			</h2>
@@ -33,5 +33,5 @@
     </section>
 
     
-</body>
+<c:import url="common/footer.jsp"/>
 </html>
