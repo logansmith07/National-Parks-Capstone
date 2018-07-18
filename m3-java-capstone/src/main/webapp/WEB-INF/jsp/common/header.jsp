@@ -4,8 +4,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>NavBar</title>
-    <c:url value="/css/solarsystemgeek.css" var="cssHref" />
+    <title>${title} - National Park Geek</title>
+    <c:url value="/css/styles.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
 
