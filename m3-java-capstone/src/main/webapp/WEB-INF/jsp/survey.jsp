@@ -15,19 +15,19 @@
 		<option value="ENP">Everglades</option>
 		<option value="GCNP">Grand Canyon</option>
 		<option value="GNP">Glacier</option>
-		<option value="GSMNP">Great Smoky Mountains</option>
+		<option value="GSMNP">Great Smokey Mountains</option>
 		<option value="GTNP">Grand Teton</option>
 		<option value="MRNP">Mount Rainier</option>
 		<option value="RMNP">Rocky Mountain</option>
 		<option value="YNP">Yellowstone</option>
 		<option value="YNP2">Yosemite</option>
-		</form:select>
+	</form:select>
 	</div>
 	
 	 <div>
             <label for="email">Your Email</label>
 			<form:input path="email" />            
-        		<form:errors path="email" cssClass="error"/>		
+        	<form:errors path="email" cssClass="error"/>		
       </div>
       
     <div>
@@ -88,19 +88,19 @@
 	</div>
       
    <div>
-      <label for="activityLevel"> What's yo fave season?</label> 
-     <form:input path="activityLevel" type="radio" name="activityLevel" value="Super Duper"/> Super Duper<br>
-	<form:input path="activityLevel" type="radio" name="activityLevel" value="Pretty Active"/> Pretty Active<br>
-	<form:input path="activityLevel" type="radio" name="activityLevel" value="I do some things"/> I Do Some Things <br>
-	<form:input path="activityLevel" type="radio" name="activityLevel" value="Just chilling"/> Just chilling <br>
+    <label for="activityLevel"> What's your activity level?</label> <br>
+    <form:radiobutton path="activityLevel" name="activityLevel" value="Super Duper"/> Super Duper<br>
+	<form:radiobutton path="activityLevel" name="activityLevel" value="Pretty Active"/> Pretty Active<br>
+	<form:radiobutton path="activityLevel" name="activityLevel" value="I do some things"/> I Do Some Things <br>
+	<form:radiobutton path="activityLevel" name="activityLevel" value="Just chilling"/> Just chilling <br>
      <form:errors path="activityLevel" cssClass="error"/>
      </div>
      
         <div>
-            <input type="submit" value="Sign Me Up!"/>
+            <input type="submit" value="Submit Survey!"/>
         </div>
         
         
 </form:form>
 </section>
-<<c:import url="common/footer.jsp"/>
+<c:import url="common/footer.jsp"/>

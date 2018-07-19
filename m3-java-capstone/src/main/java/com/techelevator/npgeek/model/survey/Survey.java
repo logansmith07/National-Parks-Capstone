@@ -1,5 +1,7 @@
 package com.techelevator.npgeek.model.survey;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -7,20 +9,17 @@ public class Survey {
 	
 	private Long surveyId;
 	
-	@NotBlank(message="Park name is required")
+	@NotNull(message="Park name is required")
 	private String parkCode;
 	
 	@NotBlank(message="Email is required")
 	@Email(message="Email must be a valid email address")
 	private String email;
 	
-	@NotBlank(message="Verify email address is required")
-	private String verifyEmail;
-	
-	@NotBlank(message="State of residence is required")
+	@NotNull(message="State of residence is required")
 	private String residenceState;
 	
-	@NotBlank(message="Activity level is required")
+	@NotNull(message="Activity level is required")
 	private String activityLevel;
 	
 	public Long getSurveyId() {
@@ -47,13 +46,7 @@ public class Survey {
 		this.email = email;
 	}
 
-	public String getVerifyEmail() {
-		return verifyEmail;
-	}
-
-	public void setVerifyEmail(String verifyEmail) {
-		this.verifyEmail = verifyEmail;
-	}
+	
 
 	public String getResidenceState() {
 		return residenceState;

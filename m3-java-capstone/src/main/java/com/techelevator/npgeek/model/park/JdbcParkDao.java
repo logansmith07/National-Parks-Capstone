@@ -42,6 +42,31 @@ public class JdbcParkDao implements ParkDao {
 		return park;
 	}
 	
+	@Override
+	public List<Park> getParksWithSurveyCount() {
+		List<Park> allParks = new ArrayList<>();
+		//just change this
+		String sqlSelectAllParks = "SELECT COUNT(*), p.parkname, p.parkcode " + 
+				"FROM survey_result sr " + 
+				"JOIN park p " + 
+				"ON p.parkcode = sr.parkcode " + 
+				"GROUP BY p.parkname, p.parkcode " + 
+				"ORDER BY COUNT(*) DESC, p.parkname ASC";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllParks);
+		while(results.next()) {
+			allParks.add(mapRowToSurveyPark(results));
+		}
+		return allParks;
+	}
+	
+	private Park mapRowToSurveyPark(SqlRowSet row) {
+		Park park = new Park();
+		park.setParkCode(row.getString("parkcode"));
+		park.setParkName(row.getString("parkname"));
+		park.setNumberSurveys(row.getInt("count"));
+		return park;
+	}
+	
 	private Park mapRowToPark(SqlRowSet row) {
 		Park park = new Park();
 		park.setParkCode(row.getString("parkcode"));
@@ -59,8 +84,10 @@ public class JdbcParkDao implements ParkDao {
 		park.setDescription(row.getString("parkdescription"));
 		park.setEntryFee(row.getInt("entryfee"));
 		park.setNumberAnimalSpecies(row.getInt("numberofanimalspecies"));
+		
 
 		return park;
 	}
+
 
 }
