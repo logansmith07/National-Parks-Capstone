@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.npgeek.model.park.JdbcParkDao;
+import com.techelevator.npgeek.model.survey.JdbcSurveyDao;
+import com.techelevator.npgeek.model.survey.Survey;
 
 @Controller
-
 public class SurveyController {
 	@Autowired
 	private JdbcSurveyDao surveyDao;
