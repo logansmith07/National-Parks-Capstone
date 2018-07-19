@@ -5,30 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <title>National Park Geek</title>
+    <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
     <c:url value="/css/styles.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
 
 <body>
-
+<c:url value="/homepage" var="homepage" />
+<c:url value="/img/ssg_logo.png" var="logoSrc" />
 <c:url value="/homepage" var="homepage"/>
 <c:url value = "/survey" var="survey"/>
-
-    <header>
-    <nav>
-    		<c:url value="/homepage" var="homepage" />
-    		<c:url value="/img/ssg_logo.png" var="logoSrc" />
-    		
-        <a href="${homepage}">
-        		<img id="hero-pic" src="img/logo.png" />
+<div class="container">
+  <div class="row">
+  	<div class="col-sm-12">
+ 		<a href="${homepage}">
+        	<img class="img-fluid" src="img/logo.png" />
         </a>
-        <ul>
-            <li><a href="${homepage}">Home</a></li>
-            <li><a href="${survey}">Survey</a></li>
-        </ul>
-    </nav>
-    </header>
-    
+      </div> 
+   </div>
+</div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link"href="${homepage}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="${survey}">Survey</a>
+    </li>
+  </ul>
+</nav>
+<br>
+
 
 
 </html>
