@@ -11,19 +11,19 @@
 
 <c:import url="common/header.jsp"/>
     <section id="main-content">
-    	<c:forEach var="park" items="${parks}">
-	    	<div class = "park flex-container">
-	    		<div class="park-head">
-	    		<h2> 
-    			<c:out value="${park.parkName}" />
-    			
-    			<c:out value="${park.state}" />
-    			</h2>
+    <h1>National Parks Survey Results</h1>
+    	<c:forEach items="${parks}" var="park" >
+	    	<div class = "park">
 	    		<a href="parkDetail?parkCode=${park.parkCode}">
-		    		<img class="park-img" src = "img/parks/${park.parkCode}.jpg"/>
+		    		<img id="parkImg" src = "img/parks/${park.parkCode}.jpg"/>
 		    	</a>
-    			</div>
-    			<p class="description"><c:out value="${park.description}" /></p>
+    		
+    			<h2> 
+    			<c:out value="${park.parkName}" />
+ 
+    			</h2>
+    			
+    			<h1><c:out value="${park.numberSurveys}" /></h1>
 		    			
 	    	 </div>
 		       

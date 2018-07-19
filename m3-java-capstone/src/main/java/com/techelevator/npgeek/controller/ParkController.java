@@ -12,17 +12,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.npgeek.model.park.JdbcParkDao;
+import com.techelevator.npgeek.model.park.ParkDao;
 import com.techelevator.npgeek.model.weather.JdbcWeatherDao;
 import com.techelevator.npgeek.model.weather.Weather;
+import com.techelevator.npgeek.model.weather.WeatherDao;
 
 @Controller
 @SessionAttributes("celsius")
 public class ParkController {
 	@Autowired
-	private JdbcParkDao parkDao;
+	private ParkDao parkDao;
 	
 	@Autowired
-	private JdbcWeatherDao weatherDao;
+	private WeatherDao weatherDao;
 	
 	@RequestMapping("/homepage")
 	public String displayHomePage(HttpServletRequest request) {

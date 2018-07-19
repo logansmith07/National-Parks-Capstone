@@ -17,6 +17,16 @@ public class Park {
 	private String description;
 	private int entryFee;
 	private int numberAnimalSpecies;
+	private int numberSurveys;
+	
+	
+	public int getNumberSurveys() {
+		return numberSurveys;
+	}
+	
+	public void setNumberSurveys(int numberSurveys) {
+		this.numberSurveys = numberSurveys;
+	}
 	
 	
 	public String getParkCode() {

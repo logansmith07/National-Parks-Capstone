@@ -5,7 +5,9 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
+@Component
 public class JdbcSurveyDao implements SurveyDao {
 	
 	private JdbcTemplate jdbcTemplate;
@@ -17,7 +19,7 @@ public class JdbcSurveyDao implements SurveyDao {
 
 	@Override
 	public void addSurvey(Survey survey) {
-		String sqlInsertSurvey = "INSERT INTO survey_results (surveyid, parkcode, emailaddress, state, activitylevel) VALUES(?, ?, ?, ?)";
+		String sqlInsertSurvey = "INSERT INTO survey_result (surveyid, parkcode, emailaddress, state, activitylevel) VALUES(?, ?, ?, ?, ?)";
 		Long id = getNextId();
 		jdbcTemplate.update(sqlInsertSurvey, id, survey.getParkCode(), survey.getEmail(), survey.getResidenceState(), survey.getActivityLevel());
 		survey.setSurveyId(id);
@@ -27,7 +29,7 @@ public class JdbcSurveyDao implements SurveyDao {
 	@Override
 	public Survey getNumberOfSurveysByParkCode() {
 		Survey survey = null;
-		String sqlSelectSurveyByParkCode = "SELECT * FROM survey_results WHERE parkcode = ?";
+		String sqlSelectSurveyByParkCode = "SELECT * FROM survey_result WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyByParkCode);
 		if(results.next()) {
 			survey = mapRowToSurvey(results);
