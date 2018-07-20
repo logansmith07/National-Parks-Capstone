@@ -39,7 +39,7 @@
 				
 					</div>
 				</div> 
-	    	 <hr>
+	    	 <hr />
 	    	 
 	    	 <c:url var="formAction" value="/parkDetail"/>
 	    	 <form action="${formAction}" method="POST" >
@@ -55,30 +55,31 @@
 				<input type="hidden" name="parkCode" id="parkCode" value="${park.parkCode}" />
 	    	 </form>
 	    	
-	    	
-	    	 <div class="row">
+	    	<br>
+	    	 <div class="row border">
 		    	 <div class="col-sm-4">
 			    	 <img class="img-fluid" src="img/weather/${weathers.get(0).forecast}.png"/>
-					 <p class="text-center">High <c:out value= "${weathers.get(0).getHigh(celsius)}"/></p> 
+					 <p class="text-center no-margin">High <c:out value= "${weathers.get(0).getHigh(celsius)}"/></p> 
 					 <p class="text-center">Low <c:out value= "${weathers.get(0).getLow(celsius)}"/></p>
 				 </div>
-			 
 	    	 <c:forEach var="index" begin="1"  end="${weathers.size() -1}">
 	    	 <div class="col-sm-2">
 					<img class ="img-fluid" src="img/weather/${weathers.get(index).forecast}.png"/>
 						
-						<p class="text-center">High <c:out value= "${weathers.get(index).getHigh(celsius)}"/></p> 
+						<p class="text-center no-margin">High <c:out value= "${weathers.get(index).getHigh(celsius)}"/></p> 
 				
-					   <p class="text-center">Low <c:out value= "${weathers.get(index).getLow(celsius)}"/></p>
-					  
-			    </div>
+					   <p class="text-center no-margin">Low <c:out value= "${weathers.get(index).getLow(celsius)}"/></p>
+			
+					 </div>
 			</c:forEach>
-		</div>
+			</div>
+		
+		
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card red-background">
 					 	<div class="card-header">
-							 <h3 class="text-danger text-center">Alerts</h3>
+							 <h3 class="text-danger text-center">Alerts For Today</h3>
 							 <ul class="list-group">
 								 <c:forEach var="warning"  items="${weathers.get(0).getWarnings()}">
 								 	<li class="list-group-item list-group-item-danger"><p>${warning}</p></li>

@@ -10,3 +10,7 @@
 .red-background {
 	background:rgba(250,0,0,0.5);
 }
+
+.no-margin {
+	margin: 0px;
+}
