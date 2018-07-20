@@ -10,29 +10,27 @@
 </head>
 
 <c:import url="common/header.jsp"/>
-    <section id="main-content">
+<div class="container">
     	<c:forEach var="park" items="${parks}">
-	    	<div class = "park flex-container">
-	    		<div class="park-head">
-	    		<h2> 
-    			<c:out value="${park.parkName}" />
-    			
-    			<c:out value="${park.state}" />
-    			</h2>
-	    		<a href="parkDetail?parkCode=${park.parkCode}">
-		    		<img class="park-img" src = "img/parks/${park.parkCode}.jpg"/>
+    	<div class="row">
+    		<div class ="col-md-6">
+    			<a href="parkDetail?parkCode=${park.parkCode}">
+		    		<img class="img-fluid border border-dark park-image" src = "img/parks/${park.parkCode}.jpg"/>
 		    	</a>
-    			</div>
+		   </div>
+		   <div class ="col-md-6">
+	    		<h2> 
+	    			<c:out value="${park.parkName}" />
+    			</h2>
+    			<h2>
+    				<c:out value="${park.state}" />
+    			</h2>
     			<p class="description"><c:out value="${park.description}" /></p>
-		    			
-	    	 </div>
-		       
-	    	 <hr>
+    		</div>
+    	  </div>
 	    </c:forEach>
+	  </div>
 
-       
-
-    </section>
 
     
 <c:import url="common/footer.jsp"/>

@@ -1,27 +1,3 @@
-#hero-pic {
-	height: 20%;
-	width: 30%;
-}
-
-.flex-container {
-	display: flex;
-	
-}
-
-.float-it {
-	float: left;
-}
-
-.park-head {
-	width: 50%;
-}
-
-.description {
-	position: relative;
-	top: 80px;
-}
-
-.park-img {
-	
-	margin: 10px 20px 0px 0px;
+.park-image {
+	padding: 10px 10px 10px 10px;
 }
