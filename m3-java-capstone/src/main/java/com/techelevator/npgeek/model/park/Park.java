@@ -19,7 +19,6 @@ public class Park {
 	private int numberAnimalSpecies;
 	private int numberSurveys;
 	
-	
 	public int getNumberSurveys() {
 		return numberSurveys;
 	}
@@ -27,7 +26,6 @@ public class Park {
 	public void setNumberSurveys(int numberSurveys) {
 		this.numberSurveys = numberSurveys;
 	}
-	
 	
 	public String getParkCode() {
 		return parkCode.toLowerCase();
@@ -118,9 +116,5 @@ public class Park {
 	}
 	public void setNumberAnimalSpecies(int numberAnimalSpecies) {
 		this.numberAnimalSpecies = numberAnimalSpecies;
-	}
-	
-	
-	
-
+	}	
 }

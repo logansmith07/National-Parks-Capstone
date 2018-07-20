@@ -5,34 +5,36 @@
 <c:import url="common/header.jsp"/>
 <section id="main-content"  class="centeredPanel">
 <c:url value="/survey/submit" var="surveySubmitURL" />
-         <div><p>Please enter your information to join our email list.</p></div>
+         <div><p class="surveyTitle">Please fill out the daily survey</p></div>
+         <hr>
 
+<div class="container">
 <form:form action="${surveySubmitURL}" method="POST" modelAttribute="survey">
-	    <div>
-    <label for="parkCode">National Park</label>
-	<form:select path="parkCode" name="parkCode" id="parkCode">
-		<option value="CVNP">Cuyahoga Valley</option>
-		<option value="ENP">Everglades</option>
-		<option value="GCNP">Grand Canyon</option>
-		<option value="GNP">Glacier</option>
-		<option value="GSMNP">Great Smokey Mountains</option>
-		<option value="GTNP">Grand Teton</option>
-		<option value="MRNP">Mount Rainier</option>
-		<option value="RMNP">Rocky Mountain</option>
-		<option value="YNP">Yellowstone</option>
-		<option value="YNP2">Yosemite</option>
+	<div class="dropdown">
+    <label for="parkCode"><b>Favorite National Park</b></label>
+	<form:select path="parkCode" name="parkCode" id="parkCode" class="custom-select custom-select mb-3">
+		<option value="CVNP">Cuyahoga Valley National Park</option>
+		<option value="ENP">Everglades National Park</option>
+		<option value="GCNP">Grand Canyon National Park</option>
+		<option value="GNP">Glacier National Park</option>
+		<option value="GSMNP">Great Smokey Mountains National Park</option>
+		<option value="GTNP">Grand Teton National Park</option>
+		<option value="MRNP">Mount Rainier National Park</option>
+		<option value="RMNP">Rocky Mountain National Park</option>
+		<option value="YNP">Yellowstone National Park</option>
+		<option value="YNP2">Yosemite National Park</option>
 	</form:select>
 	</div>
 	
-	 <div>
-            <label for="email">Your Email</label>
-			<form:input path="email" />            
+	 <div class="form-group">
+            <label for="email"><b>Your Email</b></label>
+			<form:input path="email" class="form-control"/>            
         	<form:errors path="email" cssClass="error"/>		
       </div>
-      
-    <div>
-	    <label for="residenceState">Where are you from</label>
-		<form:select path="residenceState" name="residenceState" id="residenceState">
+
+    <div class="dropdown">
+	    <label for="residenceState"><b>State of Residence</b></label>
+		<form:select path="residenceState" name="residenceState" id="residenceState" class="custom-select custom-select mb-3">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -41,7 +43,7 @@
 			<option value="CO">Colorado</option>
 			<option value="CT">Connecticut</option>
 			<option value="DE">Delaware</option>
-			<option value="DC">District Of Columbia</option>
+			<option value="DC">District of Columbia</option>
 			<option value="FL">Florida</option>
 			<option value="GA">Georgia</option>
 			<option value="HI">Hawaii</option>
@@ -86,21 +88,39 @@
 			<option value="WY">Wyoming</option>			
 		</form:select>
 	</div>
-      
-   <div>
-    <label for="activityLevel"> What's your activity level?</label> <br>
-    <form:radiobutton path="activityLevel" name="activityLevel" value="Super Duper"/> Super Duper<br>
-	<form:radiobutton path="activityLevel" name="activityLevel" value="Pretty Active"/> Pretty Active<br>
-	<form:radiobutton path="activityLevel" name="activityLevel" value="I do some things"/> I Do Some Things <br>
-	<form:radiobutton path="activityLevel" name="activityLevel" value="Just chilling"/> Just chilling <br>
-     <form:errors path="activityLevel" cssClass="error"/>
-     </div>
-     
-        <div>
-            <input type="submit" value="Submit Survey!"/>
-        </div>
+	
+	<label for="activityLevel"><b>Activity Level</b></label>
+	
+	<br>
+	
+	<div class="custom-control custom-radio custom-control-inline">
+    <form:radiobutton class="custom-control-input" id="extremelyActive" path="activityLevel" name="activityLevel" value="Extremely Active"/>
+    <label class="custom-control-label" for="extremelyActive">Extremely Active</label>
+  	</div>
+  	
+  	<div class="custom-control custom-radio custom-control-inline">
+    <form:radiobutton class="custom-control-input" id="active" path="activityLevel" name="activityLevel" value="Active"/>
+    <label class="custom-control-label" for="active">Active</label>
+  	</div>
+  	
+  	<div class="custom-control custom-radio custom-control-inline">
+    <form:radiobutton class="custom-control-input" id="sedentary" path="activityLevel" name="activityLevel" value="Sedentary"/>
+    <label class="custom-control-label" for="sedentary">Sedentary</label>
+  	</div>
+  	
+  	<div class="custom-control custom-radio custom-control-inline">
+    <form:radiobutton class="custom-control-input" id="inactive" path="activityLevel" name="activityLevel" value="Inactive"/>
+    <label class="custom-control-label" for="inactive">Inactive</label>
+  	</div>
+  	
+  		<form:errors class="alert alert-danger" path="activityLevel" cssClass="error"/>
+    
+   	<div>
+   		<button id="submitButton" type="submit" class="btn btn-primary">Submit Survey</button>
+   	</div>
         
         
 </form:form>
+</div>
 </section>
 <c:import url="common/footer.jsp"/>

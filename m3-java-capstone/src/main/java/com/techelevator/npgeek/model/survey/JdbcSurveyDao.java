@@ -25,20 +25,8 @@ public class JdbcSurveyDao implements SurveyDao {
 		survey.setSurveyId(id);
 		
 	}
-
-	@Override
-	public Survey getNumberOfSurveysByParkCode() {
-		Survey survey = null;
-		//CHANGE LINE 31 SQL STATEMENT!!!
-		String sqlSelectSurveyByParkCode = "SELECT * FROM survey_result WHERE parkcode = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyByParkCode);
-		if(results.next()) {
-			survey = mapRowToSurvey(results);
-		}
-		return survey;
-	}
 	
-	private Long getNextId() {
+	public Long getNextId() {
 		String sqlSelectNextId = "SELECT NEXTVAL('seq_surveyid')";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectNextId);
 		if(result.next()) {
