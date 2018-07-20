@@ -1,3 +1,12 @@
 .park-image {
 	padding: 10px 10px 10px 10px;
+	width: 100%;
+}
+
+.top-padding {
+	padding-top: 5px;
+}
+
+.red-background {
+	background:rgba(250,0,0,0.5);
 }
