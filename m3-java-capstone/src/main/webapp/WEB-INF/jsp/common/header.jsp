@@ -6,7 +6,10 @@
     <meta charset="UTF-8">
     <title>National Park Geek</title>
     <c:url value="/css/styles.css" var="cssHref" />
+    <c:url value="/css/stylesLogan.css" var="cssHref2" />
     <link rel="stylesheet" href="${cssHref}">
+    <link rel="stylesheet" href="${cssHref2}">
+    
 </head>
 
 <body>

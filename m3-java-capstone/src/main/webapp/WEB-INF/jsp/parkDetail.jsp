@@ -77,13 +77,13 @@
 			 
 	    	 </div>
 	    	 <c:forEach var="index" begin="1"  end="${weathers.size() -1}">
-	    	 <table class="weatherTable">
+	    	 <table>
 					<tr>
 					<th><img src="img/weather/${weathers.get(index).forecast}.png"/></th>
 					</tr>
 					<tr>
 						<td>
-						<p>High <c:out value= "${weathers.get(index).getHigh(celsius)}"/> </p> 
+						<p>High <c:out value= "${weathers.get(index).getHigh(celsius)}"/></p> 
 				
 					   <p>Low <c:out value= "${weathers.get(index).getLow(celsius)}"/></p>
 					   </td>

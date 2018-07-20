@@ -45,7 +45,6 @@ public class JdbcParkDao implements ParkDao {
 	@Override
 	public List<Park> getParksWithSurveyCount() {
 		List<Park> allParks = new ArrayList<>();
-		//just change this
 		String sqlSelectAllParks = "SELECT COUNT(*), p.parkname, p.parkcode " + 
 				"FROM survey_result sr " + 
 				"JOIN park p " + 
