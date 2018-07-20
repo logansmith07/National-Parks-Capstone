@@ -10,28 +10,35 @@
 </head>
 
 <c:import url="common/header.jsp"/>
-    <section id="main-content">
+<div class="container-fluid">
     <h1>National Parks Survey Results</h1>
+    <hr />
     	<c:forEach items="${parks}" var="park" >
-	    	<div class = "park">
+    	<div class="row justify-content-center">
+    		<div class="col-md-12">
+    				<h1> 
+    					<c:out value="${park.parkName}" />
+    				</h1>
+    			</div>
+    		</div>
+    	<div class="row justify-content-center">
+    		<div class="col-md-8">
 	    		<a href="parkDetail?parkCode=${park.parkCode}">
-		    		<img id="parkImg" src = "img/parks/${park.parkCode}.jpg"/>
+		    		<img id="parkImg img-fluid" src = "img/parks/${park.parkCode}.jpg"/>
 		    	</a>
-    		
-    			<h2> 
-    			<c:out value="${park.parkName}" />
- 
-    			</h2>
+    		</div>
     			
-    			<h1><c:out value="Number of votes: ${park.numberSurveys}" /></h1>
-		    			
-	    	 </div>
-		       
+    			<div class="col-sm-4">
+	    			<div class="jumbotron jumbotron-fluid">
+	    				<h1><c:out value="Votes: ${park.numberSurveys}" /></h1>
+	    			</div>
+		    	</div>		
+	    	 
+		 </div>
+		 <hr />
 	    </c:forEach>
+</div>    
 
-       
-
-    </section>
 
     
 <c:import url="common/footer.jsp"/>
