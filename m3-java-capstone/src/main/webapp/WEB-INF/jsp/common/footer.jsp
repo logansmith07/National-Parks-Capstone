@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<p>National Parks Are Sick</p>
+<hr>
+<p>©2018 National Park Geek</p>
 </body>
 </html>

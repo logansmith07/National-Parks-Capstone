@@ -23,11 +23,10 @@
  
     			</h2>
     			
-    			<h1><c:out value="${park.numberSurveys}" /></h1>
+    			<h1><c:out value="Number of votes: ${park.numberSurveys}" /></h1>
 		    			
 	    	 </div>
 		       
-	    	 <hr>
 	    </c:forEach>
 
        

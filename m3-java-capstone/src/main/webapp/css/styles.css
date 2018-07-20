@@ -3,6 +3,20 @@
 	width: 100%;
 }
 
+#submitButton {
+	margin: 20px 10px 10px 0px;
+}
+
+.error {
+	color:red;
+}
+
+.surveyTitle {
+	font-size:24px;
+	position: relative;
+	left: 60px;
+}
+
 .top-padding {
 	padding-top: 5px;
 }
@@ -11,6 +25,9 @@
 	background:rgba(250,0,0,0.5);
 }
 
+<<<<<<< HEAD
 .no-margin {
 	margin: 0px;
 }
+=======
+>>>>>>> bb23f1ff6b3bde14136152da7a5972c8e775c2f7
