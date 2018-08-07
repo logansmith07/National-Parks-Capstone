@@ -24,12 +24,10 @@ private JdbcTemplate jdbcTemplate;
 	public List<Weather> getWeatherByParkCode(String parkCode) {
 		Weather weather = null;
 		List<Weather> weathers = new ArrayList<Weather>();
-//		System.out.println(parkCode);
 		String sqlSelectWeatherByParkCode = "SELECT * FROM weather WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectWeatherByParkCode, parkCode);
 		while (results.next()) {
 			weather = mapRowToWeather(results);
-			System.out.println(weather.getHigh("true"));
 			weathers.add(weather);
 		}
 		
